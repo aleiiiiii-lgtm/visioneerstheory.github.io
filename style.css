@@ -1,38 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Visioneers Theory</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* style.css - Blue science theme for Visioneers Theory */
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="marjory-dugang.html">Marjory</a>
-    <a href="dale-eugenio.html">Dale</a>
-    <a href="grace-gloria.html">Grace</a>
-    <a href="fiona-nota.html">Fiona</a>
-    <a href="acel-gabriel-ferrer.html">Acel</a>
-  </nav>
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #e0f7ff, #ffffff); /* smooth blue gradient */
+    color: #0d1b2a; /* dark navy text */
+    text-align: center;
+}
 
-  <!-- Main content -->
-  <div class="container">
-    <h1>About Us</h1>
+/* Navigation styling */
+nav {
+    margin-bottom: 30px;
+}
 
-    <p>
-      We are a group of Grade 12 ABM students sharing our journey, experiences, and insights through this blog. 
-      Each of us brings unique strengths, but we all share the same passion for learning and growth.
-    </p>
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #0d1b2a;
+    font-weight: bold;
+    transition: color 0.3s;
+}
 
-    <h2>Our Mission</h2>
-    <p>
-      "We lead on purpose, we create things meaningfully, and do things full of love."
-    </p>
-  </div>
+nav a:hover {
+    color: #1a73e8; /* light blue on hover */
+}
 
-</body>
-</html>
+/* Container for main content */
+.container {
+    background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: left; /* better for paragraphs */
+}
+
+/* Headings */
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #0d1b2a;
+}
+
+h2 {
+    font-size: 26px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #0d1b2a;
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.7;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+/* Images */
+img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Footer (optional if you want) */
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color
