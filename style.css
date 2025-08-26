@@ -1,0 +1,56 @@
+/* style.css for all pages - science theme */
+body {
+  font-family: "Arial", sans-serif;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+  padding: 20px;
+  background: linear-gradient(to bottom, #e0f7ff, #ffffff); /* light blue gradient */
+  color: #0d1b2a; /* dark navy text */
+}
+
+header, footer {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #1e3a5f; /* dark blue */
+  color: white;
+  border-radius: 8px;
+}
+
+nav {
+  margin: 15px 0;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #0d1b2a;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0077cc; /* bright blue hover */
+}
+
+img {
+  max-width: 250px;
+  border-radius: 12px;
+  display: block;
+  margin: 15px auto;
+}
+
+h1, h2 {
+  color: #1e3a5f;
+}
+
+p {
+  text-align: justify;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
