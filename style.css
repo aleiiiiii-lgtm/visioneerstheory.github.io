@@ -5,19 +5,19 @@
   box-sizing: border-box;
 }
 
-/* Body and background */
+/* Body & background */
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background: linear-gradient(to bottom, #d0e7ff, #ffffff);
-  color: #0d1b2a;
   text-align: center;
   padding: 20px;
+background: linear-gradient(to bottom, #d0e7ff, #ffffff); /* smooth blue gradient */
+  color: #0d1b2a; /* dark navy text */
 }
 
 /* Header */
 header {
-  background-color: #1e3a5f;
+  background-color: #1e3a5f; /* dark blue */
   color: #ffffff;
   padding: 20px 0;
 }
@@ -41,29 +41,29 @@ nav a {
 }
 
 nav a:hover {
-  color: #00b0ff;
+  color: #00b0ff; /* bright blue on hover */
 }
 
-/* Container for content */
+/* Container content */
 .container {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 30px auto;
   width: 90%;
   max-width: 900px;
-  text-align: left; /* paragraphs aligned left for readability */
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 0.1); /*subtle white card */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left; /* paragraphs aligned left */
 }
 
 /* Images */
 img {
-  width: 100%;
   max-width: 250px;
+  width: 100%;
   height: auto;
-  border-radius: 12px;
   display: block;
   margin: 20px auto;
+  border-radius:;12px;
 }
 
 /* Paragraphs */
