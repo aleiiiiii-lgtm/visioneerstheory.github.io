@@ -1,0 +1,70 @@
+/* Global styles for Visioneers Theory Blog */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #d0e7ff, #ffffff); /* soft blue gradient */
+    color: #0d1b2a; /* dark navy text */
+}
+
+a {
+    text-decoration: none;
+    color: #0d1b2a;
+}
+
+a:hover {
+    color: #0077b6; /* bright blue on hover */
+}
+
+nav {
+    background-color: #0096c7; /* solid blue navbar */
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    font-weight: bold;
+    color: white;
+}
+
+nav a:hover {
+    color: #ffdd00; /* highlight on hover */
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* semi-transparent white to pop over gradient */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+img {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #0077b6;
+    color: white;
+    margin-top: 40px;
+}
