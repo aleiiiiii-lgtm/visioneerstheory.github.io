@@ -1,105 +1,38 @@
-/* Reset default browser styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Visioneers Theory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* Body & background */
-body {
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
-  text-align: center;
-  padding: 20px;
-background: linear-gradient(to bottom, #d0e7ff, #ffffff); /* smooth blue gradient */
-  color: #0d1b2a; /* dark navy text */
-}
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="marjory-dugang.html">Marjory</a>
+    <a href="dale-eugenio.html">Dale</a>
+    <a href="grace-gloria.html">Grace</a>
+    <a href="fiona-nota.html">Fiona</a>
+    <a href="acel-gabriel-ferrer.html">Acel</a>
+  </nav>
 
-/* Header */
-header {
-  background-color: #1e3a5f; /* dark blue */
-  color: #ffffff;
-  padding: 20px 0;
-}
+  <!-- Main content -->
+  <div class="container">
+    <h1>About Us</h1>
 
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
+    <p>
+      We are a group of Grade 12 ABM students sharing our journey, experiences, and insights through this blog. 
+      Each of us brings unique strengths, but we all share the same passion for learning and growth.
+    </p>
 
-/* Navigation */
-nav {
-  margin: 15px 0;
-}
+    <h2>Our Mission</h2>
+    <p>
+      "We lead on purpose, we create things meaningfully, and do things full of love."
+    </p>
+  </div>
 
-nav a {
-  margin: 0 12px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #00b0ff; /* bright blue on hover */
-}
-
-/* Container content */
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 0.1); /*subtle white card */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: left; /* paragraphs aligned left */
-}
-
-/* Images */
-img {
-  max-width: 250px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius:;12px;
-}
-
-/* Paragraphs */
-p {
-  text-align: justify;
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
-/* Footer */
-footer {
-  background-color: #1e3a5f;
-  color: #ffffff;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  nav a {
-    display: block;
-    margin: 8px 0;
-  }
-
-  .container {
-    width: 95%;
-    padding: 15px;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-}
+</body>
+</html>
