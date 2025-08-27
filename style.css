@@ -1,85 +1,100 @@
 /* ------------------------------
-   General Page Styles
+   General Reset
 ------------------------------ */
-body {
+* {
   margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #e0f7ff, #ffffff);
-  color: #0d1b2a;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+  padding: 20px;
 }
 
 /* ------------------------------
-   Header & Navigation
+   Header / Navigation
 ------------------------------ */
-header, footer {
-  text-align: center;
-  position: relative;
-  z-index: 2;
+header {
+  margin-bottom: 40px;
 }
 
 header h1 {
-  margin: 30px 0 20px 0;
   font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-nav {
-  margin-bottom: 40px;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav a {
   text-decoration: none;
-  color: #0d1b2a;
-  margin: 0 15px;
+  color: #0077cc;
   font-weight: bold;
-  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #005999;
 }
 
 /* ------------------------------
-   Main Container & Content Box
+   Content Box (About / Index)
 ------------------------------ */
-main.container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
-
 .content-box {
-  max-width: 900px;
-  padding: 50px 40px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1; /* keeps text above floating emojis */
 }
 
 .content-box h2 {
-  text-align: center;
-  margin-bottom: 35px;
   font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .content-box p {
-  margin: 25px 0;       /* more spacing between paragraphs */
-  font-size: 1.2rem;    /* comfortable reading size */
-  line-height: 1.8;     /* more spacing between lines */
+  margin: 25px 0;      /* space between paragraphs */
+  font-size: 1.2rem;   /* readable size */
+  line-height: 1.8;    /* relaxed spacing */
+  text-align: justify; /* neat alignment */
+}
+
+/* ------------------------------
+   Floating Emojis
+------------------------------ */
+.floating-emoji {
+  position: fixed;
+  font-size: 2rem;
+  opacity: 0.3; /* subtle like a watermark */
+  animation: float 6s ease-in-out infinite;
+  z-index: 0; /* behind the content */
+  pointer-events: none; /* not clickable */
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
 
 /* ------------------------------
    Footer
 ------------------------------ */
-footer p {
-  margin: 30px 0;
-  font-size: 1rem;
-}
-
-/* ------------------------------
-   Floating Emojis (Optional)
------------------------------- */
-.floating-emoji {
-  position: absolute;
+footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #555;
 }
