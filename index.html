@@ -6,7 +6,6 @@
   <title>Visioneers Theory 🌌</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Temporary inline CSS for centering */
     body {
       margin: 0;
       min-height: 100vh;
@@ -16,47 +15,80 @@
       background: linear-gradient(to bottom, #e0f7ff, #ffffff);
       color: #0d1b2a;
     }
+
     .floating-emoji {
       position: absolute;
     }
+
     header, footer {
       text-align: center;
-      z-index: 2;
       position: relative;
+      z-index: 2;
     }
+
+    header h1 {
+      margin: 30px 0 20px 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-bottom: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0d1b2a;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
     main.container {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 40px 20px;
     }
+
     .content-box {
       max-width: 900px;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.85);
+      padding: 50px 40px;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      text-align: justify;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
+
     .content-box h2 {
       text-align: center;
+      margin-bottom: 35px;
+      font-size: 2rem;
     }
+
     .content-box p {
       margin: 20px 0;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
+      text-align: justify;
+      line-height: 1.7;
+    }
+
+    footer p {
+      margin: 30px 0;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
+
   <!-- Floating planets & airship -->
   <div class="floating-emoji" style="top:5%; left:15%; font-size:1.8rem;">🌍</div>
   <div class="floating-emoji" style="top:35%; left:70%; font-size:2rem;">🪐</div>
-  <div class="floating-emoji" style="top:65%; left:40%; font-size:1.5rem;">☿</div>
+  <div class="floating-emoji" style="top:65%; left:40%; font-size:1.5rem;">☄️</div>
   <div class="floating-emoji" style="top:10%; left:50%; font-size:2rem;">🛸</div>
 
   <header>
     <h1>Visioneers Theory 🚀</h1>
-    <nav style="margin-bottom: 30px;">
+    <nav>
       <a href="index.html">Home</a> |
       <a href="about.html">About</a> |
       <a href="members.html">Members</a>
@@ -65,7 +97,7 @@
 
   <main class="container">
     <div class="content-box">
-      <h2>Welcome! 👋</h2>
+      <h2>Welcome!</h2>
       <p>
         We are <strong>Visioneers Theory</strong>, a group of Grade 12 ABM students with a passion for learning and creating.
       </p>
@@ -81,5 +113,6 @@
   <footer>
     <p>© 2025 Visioneers Theory 🌌</p>
   </footer>
+
 </body>
 </html>
