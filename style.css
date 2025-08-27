@@ -64,9 +64,9 @@ main.container {
 }
 
 .content-box p {
-  margin: 20px 0;
-  font-size: 1.2rem;
-  line-height: 1.7;
+  margin: 25px 0;       /* more spacing between paragraphs */
+  font-size: 1.2rem;    /* comfortable reading size */
+  line-height: 1.8;     /* more spacing between lines */
 }
 
 /* ------------------------------
