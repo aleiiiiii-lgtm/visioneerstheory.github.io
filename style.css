@@ -1,100 +1,82 @@
-/* ------------------------------
-   General Reset
------------------------------- */
+/* General reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.8;
   background-color: #f9f9f9;
   color: #333;
-  text-align: center;
-  padding: 20px;
+  line-height: 1.6;
 }
 
-/* ------------------------------
-   Header / Navigation
------------------------------- */
+/* Header */
 header {
-  margin-bottom: 40px;
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
 nav a {
+  color: #fff;
   text-decoration: none;
-  color: #0077cc;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  margin: 0 10px;
 }
 
 nav a:hover {
-  color: #005999;
+  text-decoration: underline;
 }
 
-/* ------------------------------
-   Content Box (About / Index)
------------------------------- */
-.content-box {
+/* Main container */
+.container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 1; /* keeps text above floating emojis */
+  margin: 30px auto;
+  padding: 20px;
 }
 
-.content-box h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+/* About page paragraphs */
+.container p {
+  margin-bottom: 18px;  /* spacing between paragraphs */
+  text-align: justify;  /* neat formatting */
 }
 
-.content-box p {
-  margin: 25px 0;      /* space between paragraphs */
-  font-size: 1.2rem;   /* readable size */
-  line-height: 1.8;    /* relaxed spacing */
-  text-align: justify; /* neat alignment */
+/* Members list */
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-/* ------------------------------
-   Floating Emojis
------------------------------- */
-.floating-emoji {
-  position: fixed;
-  font-size: 2rem;
-  opacity: 0.3; /* subtle like a watermark */
-  animation: float 6s ease-in-out infinite;
-  z-index: 0; /* behind the content */
-  pointer-events: none; /* not clickable */
+ul li {
+  margin: 12px 0;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+ul li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #222;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
-/* ------------------------------
-   Footer
------------------------------- */
+ul li a:hover {
+  background: #eee;
+}
+
+/* Footer */
 footer {
-  margin-top: 50px;
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: #fff;
+  margin-top: 30px;
   font-size: 0.9rem;
-  color: #555;
 }
