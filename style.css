@@ -29,10 +29,12 @@ nav a {
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
+  font-weight: bold;
 }
 
 nav a:hover {
   text-decoration: underline;
+  color: #ffd700; /* gold hover for emphasis */
 }
 
 /* Main container */
@@ -40,12 +42,26 @@ nav a:hover {
   max-width: 800px;
   margin: 30px auto;
   padding: 20px;
+  background: #fff; /* card-like look */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* About page paragraphs */
 .container p {
   margin-bottom: 18px;  /* spacing between paragraphs */
   text-align: justify;  /* neat formatting */
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Profile Image */
+.container img {
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+  max-width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* Members list */
@@ -64,11 +80,12 @@ ul li a {
   color: #222;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 ul li a:hover {
   background: #eee;
+  color: #000;
 }
 
 /* Footer */
@@ -79,4 +96,5 @@ footer {
   color: #fff;
   margin-top: 30px;
   font-size: 0.9rem;
+  border-top: 3px solid #444;
 }
