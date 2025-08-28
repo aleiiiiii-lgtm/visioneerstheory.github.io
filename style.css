@@ -47,21 +47,29 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* About page paragraphs */
-.container p {
-  margin-bottom: 18px;  /* spacing between paragraphs */
-  text-align: justify;  /* neat formatting */
-  font-size: 1rem;
-  line-height: 1.7;
+/* Profile name */
+.container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #222;
 }
 
-/* Profile Image */
+/* Profile image */
 .container img {
   display: block;
   margin: 0 auto 20px auto;
   border-radius: 10px;
   max-width: 250px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Paragraphs */
+.container p {
+  margin-bottom: 18px;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 /* Members list */
