@@ -5,107 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visioneers Theory 🌌</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #b3e5fc, #ffffff); /* brighter for contrast */
-      color: #0a192f; /* darker for better text visibility */
-    }
-
-    /* Floating emojis */
-    .floating-emoji {
-      position: absolute;
-      animation: float 6s ease-in-out infinite alternate;
-      z-index: 1;
-    }
-
-    @keyframes float {
-      from { transform: translateY(0px) rotate(0deg); }
-      to { transform: translateY(-20px) rotate(10deg); }
-    }
-
-    header, footer {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    header h1 {
-      margin: 30px 0 20px 0;
-      font-size: 2.5rem;
-      color: #0a192f;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-    }
-
-    nav {
-      margin-bottom: 40px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #0a192f;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff6f61; /* coral hover effect */
-    }
-
-    main.container {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .content-box {
-      max-width: 900px;
-      padding: 50px 40px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .content-box h2 {
-      text-align: center;
-      margin-bottom: 35px;
-      font-size: 2rem;
-      color: #0a192f;
-    }
-
-    .content-box p {
-      margin: 20px 0;
-      font-size: 1.2rem;
-      text-align: justify;
-      line-height: 1.7;
-      color: #1a1a1a;
-    }
-
-    footer p {
-      margin: 30px 0;
-      font-size: 1rem;
-      color: #0a192f;
-    }
-  </style>
 </head>
 <body>
 
   <!-- Floating planets & airship -->
-  <div class="floating-emoji" style="top:5%; left:15%; font-size:1.8rem;">🌍</div>
-  <div class="floating-emoji" style="top:35%; left:70%; font-size:2rem;">🪐</div>
-  <div class="floating-emoji" style="top:65%; left:40%; font-size:1.5rem;">☄️</div>
-  <div class="floating-emoji" style="top:10%; left:50%; font-size:2rem;">🛸</div>
+  <div class="floating-emoji earth">🌍</div>
+  <div class="floating-emoji planet">🪐</div>
+  <div class="floating-emoji comet">☄️</div>
+  <div class="floating-emoji ufo">🛸</div>
 
+  <!-- Header -->
   <header>
     <h1>Visioneers Theory 🚀</h1>
     <nav>
@@ -115,6 +24,7 @@
     </nav>
   </header>
 
+  <!-- Main -->
   <main class="container">
     <div class="content-box">
       <h2>Welcome!</h2>
@@ -130,6 +40,7 @@
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Visioneers Theory 🌌</p>
   </footer>
