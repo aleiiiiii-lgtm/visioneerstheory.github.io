@@ -1,28 +1,36 @@
 /* ===============================
-   VISIONEERS THEORY — Global Theme
-   =============================== */
+VISIONEERS THEORY — Webblog Theme
+=============================== */
 
 /* Color system (space vibe) */
-:root{
-  --bg-deep-1:#0b1026;
-  --bg-deep-2:#101b3a;
-  --bg-deep-3:#16213e;
-  --card-bg:rgba(255,255,255,0.06);
-  --card-border:rgba(255,255,255,0.12);
-  --text-main:#eaf4ff;
-  --text-dim:#c8d6ff;
-  --accent-1:#7ee8fa;   /* cyan */
-  --accent-2:#a777e3;   /* purple */
-  --accent-3:#ffd166;   /* warm highlight */
+:root {
+  --bg-deep-1: #0b1026;
+  --bg-deep-2: #101b3a;
+  --bg-deep-3: #16213e;
+  --card-bg: rgba(255,255,255,0.06);
+  --card-border: rgba(255,255,255,0.12);
+  --text-main: #eaf4ff;
+  --text-dim: #c8d6ff;
+  --accent-1: #7ee8fa;
+  --accent-2: #a777e3;
+  --accent-3: #ffd166;
 }
 
 /* Reset & base */
-*{ margin:0; padding:0; box-sizing:border-box; }
-html,body{ height:100%; }
-body{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
   font-family: "Poppins", Arial, sans-serif;
   color: var(--text-main);
-  line-height: 1.8;
+  line-height: 1.9;
   background:
     radial-gradient(1200px 600px at 10% -10%, #1b2a4b 0%, transparent 60%),
     radial-gradient(800px 500px at 90% 110%, #1a2f5b 0%, transparent 55%),
@@ -31,9 +39,9 @@ body{
 }
 
 /* -------------------------------
-   Header & Navigation
+Header & Navigation
 ---------------------------------- */
-header{
+header {
   position: sticky;
   top: 0;
   z-index: 5;
@@ -44,94 +52,90 @@ header{
   padding: 16px 12px;
 }
 
-header h1{
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+header h1 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   letter-spacing: 0.5px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: var(--accent-3);
-  text-shadow: 0 0 10px rgba(255,209,102,0.25);
+  text-shadow: 0 0 12px rgba(255,209,102,0.25);
 }
 
-nav{
+nav {
   font-weight: 600;
-  user-select: none;
 }
 
-nav a{
+nav a {
   color: var(--accent-1);
   text-decoration: none;
-  margin: 0 8px;
+  margin: 0 10px;
   padding: 4px 2px;
   border-bottom: 2px solid transparent;
   transition: color .25s ease, border-color .25s ease;
 }
 
-nav a:hover{ color:#fff; border-color: var(--accent-2); }
-nav a.active{ color:#fff; border-color: var(--accent-3); }
+nav a:hover {
+  color: #fff;
+  border-color: var(--accent-2);
+}
+
+nav a.active {
+  color: #fff;
+  border-color: var(--accent-3);
+}
 
 /* -------------------------------
-   Main container & “card” content
+Container & Blog Posts
 ---------------------------------- */
-.container{
+.container {
   max-width: 980px;
   margin: 42px auto;
   padding: 0 18px;
   position: relative;
-  z-index: 2; /* above floating emojis */
+  z-index: 2;
 }
 
-.content-box{
+.blog-post {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 0 40px rgba(255,255,255,0.02);
   border-radius: 18px;
   padding: clamp(20px, 4vw, 36px);
+  margin-bottom: 28px;
+  transition: transform .2s ease, box-shadow .25s ease;
 }
 
-.content-box h2{
-  text-align: center;
+.blog-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.35), 0 0 22px rgba(126,232,250,0.2);
+}
+
+.blog-post h2 {
   color: var(--accent-1);
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-  margin-bottom: 14px;
-  letter-spacing: .4px;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  margin-bottom: 12px;
+  text-align: center;
   text-shadow: 0 0 10px rgba(126,232,250,0.25);
 }
 
-/* Paragraphs — neat & consistent spacing */
-.content-box p,
-.container > p{
-  color: var(--text-dim);
-  text-align: justify;
-  letter-spacing: .2px;
-  margin-bottom: 14px;
-}
-
-.content-box p + p,
-.container > p + p{
-  margin-top: 8px;          /* extra spacing between paragraphs */
-}
-
-.content-box p:last-child,
-.container > p:last-child{
-  margin-bottom: 0;
-}
-
-/* Profile images on member pages */
-.container > img{
+.blog-post img {
   display: block;
-  width: min(68%, 260px);
+  width: min(80%, 320px);
   max-width: 100%;
-  margin: 16px auto 22px;
+  margin: 16px auto;
   border-radius: 14px;
   border: 1px solid var(--card-border);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.45),
-    0 0 30px rgba(126,232,250,0.12);
-  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45), 0 0 30px rgba(126,232,250,0.12);
 }
 
-/* Optional: subtle first-letter flair on member bios */
-.container > p:first-of-type::first-letter{
+/* Paragraphs */
+.blog-post p {
+  color: var(--text-dim);
+  text-align: justify;
+  margin-bottom: 14px;
+  letter-spacing: .2px;
+}
+
+.blog-post p:first-of-type::first-letter {
   font-size: 2.2rem;
   line-height: 1;
   float: left;
@@ -141,80 +145,23 @@ nav a.active{ color:#fff; border-color: var(--accent-3); }
 }
 
 /* -------------------------------
-   Members list (members.html)
+Floating Emojis
 ---------------------------------- */
-.content-box ul{
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-  margin-top: 10px;
-}
-
-.content-box ul li a{
-  display: block;
-  width: 100%;
-  padding: 14px 16px;
-  text-align: center;
-  color: #fff;
-  background: linear-gradient(135deg, rgba(126,232,250,0.22), rgba(167,119,227,0.22));
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: transform .2s ease, box-shadow .25s ease, background .25s ease;
-}
-
-.content-box ul li a:hover{
-  transform: translateY(-4px);
-  background: linear-gradient(135deg, rgba(126,232,250,0.34), rgba(167,119,227,0.34));
-  box-shadow: 0 16px 30px rgba(0,0,0,0.35),
-              0 0 22px rgba(126,232,250,0.2);
-}
-
-/* -------------------------------
-   Floating Emojis (Index & About)
-   - Index uses: .earth .planet .comet .ufo
-   - About uses: .emoji1 .emoji2 .emoji3 .emoji4 .emoji5
----------------------------------- */
-.floating-emoji{
+.floating-emoji {
   position: absolute;
-  z-index: 1;          /* under header & cards */
+  z-index: 1;
   pointer-events: none;
   filter: drop-shadow(0 6px 8px rgba(0,0,0,0.35));
   opacity: .9;
   animation: bob 6.5s ease-in-out infinite alternate,
              spin 18s linear infinite;
+  font-size: 2rem;
 }
-
-/* Index placements */
-.earth{ top:6%;  left:10%; font-size:1.9rem; animation-delay: 0s, 0s; }
-.planet{ top:34%; right:10%; font-size:2.2rem; animation-delay:.6s, 2s; }
-.comet{ bottom:14%; left:16%; font-size:1.7rem; animation-delay:1.2s, 4s; }
-.ufo{ top:68%; right:18%; font-size:2rem; animation-delay:1.8s, 6s; }
-
-/* About placements */
-.emoji1{ top:10%; left:15%; font-size:1.8rem; animation-delay:0s, 0s; }
-.emoji2{ top:28%; left:70%; font-size:2rem;  animation-delay:.8s, 2s; }
-.emoji3{ top:58%; left:28%; font-size:1.6rem; animation-delay:1.6s, 4s; }
-.emoji4{ top:75%; left:52%; font-size:1.9rem; animation-delay:2.4s, 6s; }
-.emoji5{ top:18%; left:85%; font-size:1.6rem; animation-delay:3.2s, 8s; }
-
-@keyframes bob{
-  from{ transform: translateY(0) }
-  to  { transform: translateY(-18px) }
-}
-@keyframes spin{
-  from{ transform: rotate(0deg) }
-  to  { transform: rotate(360deg) }
-}
-
-/* Ensure content sits above emojis */
-header, .container, footer{ position: relative; z-index: 2; }
 
 /* -------------------------------
-   Footer
+Footer
 ---------------------------------- */
-footer{
+footer {
   text-align: center;
   padding: 14px 10px 28px;
   color: var(--text-dim);
@@ -223,11 +170,23 @@ footer{
 }
 
 /* -------------------------------
-   Responsive tweaks
+Animations
 ---------------------------------- */
-@media (max-width: 640px){
-  nav a{ margin: 0 6px; }
-  .content-box{ padding: 20px; }
-  .container{ margin: 28px auto; }
-  .floating-emoji{ opacity: .85; }
-  }
+@keyframes bob {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-18px); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* -------------------------------
+Responsive tweaks
+---------------------------------- */
+@media (max-width: 640px) {
+  nav a { margin: 0 6px; }
+  .blog-post { padding: 20px; }
+  .container { margin: 28px auto; }
+  .floating-emoji { opacity: .85; }
+}
