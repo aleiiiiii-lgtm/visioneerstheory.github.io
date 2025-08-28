@@ -1,155 +1,233 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ===============================
+   VISIONEERS THEORY — Global Theme
+   =============================== */
+
+/* Color system (space vibe) */
+:root{
+  --bg-deep-1:#0b1026;
+  --bg-deep-2:#101b3a;
+  --bg-deep-3:#16213e;
+  --card-bg:rgba(255,255,255,0.06);
+  --card-border:rgba(255,255,255,0.12);
+  --text-main:#eaf4ff;
+  --text-dim:#c8d6ff;
+  --accent-1:#7ee8fa;   /* cyan */
+  --accent-2:#a777e3;   /* purple */
+  --accent-3:#ffd166;   /* warm highlight */
+}
+
+/* Reset & base */
+*{ margin:0; padding:0; box-sizing:border-box; }
+html,body{ height:100%; }
+body{
   font-family: "Poppins", Arial, sans-serif;
-}
-
-/* Body and Background */
-body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
+  color: var(--text-main);
   line-height: 1.8;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #1b2a4b 0%, transparent 60%),
+    radial-gradient(800px 500px at 90% 110%, #1a2f5b 0%, transparent 55%),
+    linear-gradient(135deg, var(--bg-deep-1), var(--bg-deep-2) 50%, var(--bg-deep-3));
+  overflow-x: hidden;
 }
 
-/* Header */
-header {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 15px;
+/* -------------------------------
+   Header & Navigation
+---------------------------------- */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--card-border);
   text-align: center;
-  border-bottom: 2px solid #00c6ff;
+  padding: 16px 12px;
 }
 
-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 5px;
+header h1{
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  color: var(--accent-3);
+  text-shadow: 0 0 10px rgba(255,209,102,0.25);
 }
 
-nav a {
-  color: #00c6ff;
-  margin: 0 10px;
+nav{
+  font-weight: 600;
+  user-select: none;
+}
+
+nav a{
+  color: var(--accent-1);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  margin: 0 8px;
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color .25s ease, border-color .25s ease;
 }
 
-nav a:hover {
-  color: #ffeb3b;
+nav a:hover{ color:#fff; border-color: var(--accent-2); }
+nav a.active{ color:#fff; border-color: var(--accent-3); }
+
+/* -------------------------------
+   Main container & “card” content
+---------------------------------- */
+.container{
+  max-width: 980px;
+  margin: 42px auto;
+  padding: 0 18px;
+  position: relative;
+  z-index: 2; /* above floating emojis */
 }
 
-/* Container & Content */
-.container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+.content-box{
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 0 40px rgba(255,255,255,0.02);
+  border-radius: 18px;
+  padding: clamp(20px, 4vw, 36px);
 }
 
-.content-box {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 800px;
+.content-box h2{
   text-align: center;
-  box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+  color: var(--accent-1);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  margin-bottom: 14px;
+  letter-spacing: .4px;
+  text-shadow: 0 0 10px rgba(126,232,250,0.25);
 }
 
-.content-box h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #ffeb3b;
-}
-
-.content-box p {
+/* Paragraphs — neat & consistent spacing */
+.content-box p,
+.container > p{
+  color: var(--text-dim);
   text-align: justify;
-  margin-bottom: 15px;
-  font-size: 1.05rem;
-  letter-spacing: 0.3px;
+  letter-spacing: .2px;
+  margin-bottom: 14px;
 }
 
-/* Floating Emojis */
-.floating-emoji {
-  position: absolute;
+.content-box p + p,
+.container > p + p{
+  margin-top: 8px;          /* extra spacing between paragraphs */
+}
+
+.content-box p:last-child,
+.container > p:last-child{
+  margin-bottom: 0;
+}
+
+/* Profile images on member pages */
+.container > img{
+  display: block;
+  width: min(68%, 260px);
+  max-width: 100%;
+  margin: 16px auto 22px;
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 30px rgba(126,232,250,0.12);
+  object-fit: cover;
+}
+
+/* Optional: subtle first-letter flair on member bios */
+.container > p:first-of-type::first-letter{
   font-size: 2.2rem;
-  animation: float 6s infinite ease-in-out;
-  opacity: 0.85;
+  line-height: 1;
+  float: left;
+  margin: 4px 8px 0 0;
+  color: var(--accent-2);
+  text-shadow: 0 0 12px rgba(167,119,227,0.35);
 }
 
-.earth { top: 20%; left: 5%; }
-.planet { top: 50%; right: 8%; }
-.comet { bottom: 15%; left: 12%; }
-.ufo { top: 70%; right: 15%; }
-
-/* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-/* Members Page */
-.members-list {
+/* -------------------------------
+   Members list (members.html)
+---------------------------------- */
+.content-box ul{
+  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
 }
 
-.member-card {
-  background: rgba(255, 255, 255, 0.07);
-  padding: 20px;
-  border-radius: 15px;
+.content-box ul li a{
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  background: linear-gradient(135deg, rgba(126,232,250,0.22), rgba(167,119,227,0.22));
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .25s ease, background .25s ease;
 }
 
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255, 235, 59, 0.6);
+.content-box ul li a:hover{
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(126,232,250,0.34), rgba(167,119,227,0.34));
+  box-shadow: 0 16px 30px rgba(0,0,0,0.35),
+              0 0 22px rgba(126,232,250,0.2);
 }
 
-.member-card h3 {
-  color: #00c6ff;
-  margin-bottom: 10px;
+/* -------------------------------
+   Floating Emojis (Index & About)
+   - Index uses: .earth .planet .comet .ufo
+   - About uses: .emoji1 .emoji2 .emoji3 .emoji4 .emoji5
+---------------------------------- */
+.floating-emoji{
+  position: absolute;
+  z-index: 1;          /* under header & cards */
+  pointer-events: none;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.35));
+  opacity: .9;
+  animation: bob 6.5s ease-in-out infinite alternate,
+             spin 18s linear infinite;
 }
 
-.member-card p {
-  font-size: 0.95rem;
-  text-align: justify;
+/* Index placements */
+.earth{ top:6%;  left:10%; font-size:1.9rem; animation-delay: 0s, 0s; }
+.planet{ top:34%; right:10%; font-size:2.2rem; animation-delay:.6s, 2s; }
+.comet{ bottom:14%; left:16%; font-size:1.7rem; animation-delay:1.2s, 4s; }
+.ufo{ top:68%; right:18%; font-size:2rem; animation-delay:1.8s, 6s; }
+
+/* About placements */
+.emoji1{ top:10%; left:15%; font-size:1.8rem; animation-delay:0s, 0s; }
+.emoji2{ top:28%; left:70%; font-size:2rem;  animation-delay:.8s, 2s; }
+.emoji3{ top:58%; left:28%; font-size:1.6rem; animation-delay:1.6s, 4s; }
+.emoji4{ top:75%; left:52%; font-size:1.9rem; animation-delay:2.4s, 6s; }
+.emoji5{ top:18%; left:85%; font-size:1.6rem; animation-delay:3.2s, 8s; }
+
+@keyframes bob{
+  from{ transform: translateY(0) }
+  to  { transform: translateY(-18px) }
+}
+@keyframes spin{
+  from{ transform: rotate(0deg) }
+  to  { transform: rotate(360deg) }
 }
 
-/* Individual Member Page */
-.member-profile {
-  max-width: 700px;
-  margin: auto;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
-}
+/* Ensure content sits above emojis */
+header, .container, footer{ position: relative; z-index: 2; }
 
-.member-profile h2 {
+/* -------------------------------
+   Footer
+---------------------------------- */
+footer{
   text-align: center;
-  margin-bottom: 15px;
-  color: #ffeb3b;
+  padding: 14px 10px 28px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--card-border);
+  background: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.0));
 }
 
-.member-profile p {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-/* Footer */
-footer {
-  background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  padding: 12px;
-  font-size: 0.9rem;
-  border-top: 2px solid #00c6ff;
-}
+/* -------------------------------
+   Responsive tweaks
+---------------------------------- */
+@media (max-width: 640px){
+  nav a{ margin: 0 6px; }
+  .content-box{ padding: 20px; }
+  .container{ margin: 28px auto; }
+  .floating-emoji{ opacity: .85; }
+  }
