@@ -1,138 +1,307 @@
-/* Reset default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* ====== Visioneers Theory — Unified Style (Orbitron + Purple Glow) ====== */
+
+/* Import Orbitron (futuristic) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+:root{
+  --bg-dark-1: #070617;
+  --bg-dark-2: #0b1026;
+  --purple-1: #8f94fb;   /* main purple accent */
+  --purple-2: #5b4ef6;   /* deeper purple */
+  --accent-yellow: #ffd86b;
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.03);
 }
 
-/* Body */
+/* ---------- Reset & base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
 body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: 'Orbitron', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(143,148,251,0.06), transparent 12%),
+    radial-gradient(circle at 85% 90%, rgba(91,78,246,0.03), transparent 18%),
+    linear-gradient(180deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 100%);
+  color: #e8e8ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* Header */
+/* ---------- Header & Nav ---------- */
 header {
-  background: rgba(0, 0, 0, 0.6);
   padding: 20px;
   text-align: center;
-  border-bottom: 2px solid #8f94fb;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom: 1px solid rgba(143,148,251,0.06);
+  backdrop-filter: blur(4px);
 }
-
 header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  color: #8f94fb;
-  text-shadow: 0 0 10px #4e54c8;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-  color: #8f94fb;
-  text-decoration: underline;
-}
-
-/* Container */
-.container {
-  flex: 1;
-  padding: 30px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Blog post */
-.blog-post {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  margin-bottom: 25px;
-}
-
-.blog-post h2 {
   font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #ffdd57;
-  text-shadow: 0 0 8px #000;
+  color: var(--purple-1);
+  text-shadow: 0 0 12px rgba(91,78,246,0.18);
+  margin-bottom: 8px;
 }
-
-/* List inside posts */
-.blog-post ul {
-  list-style: none;
-  margin-top: 10px;
+nav {
+  font-size: 0.95rem;
 }
-
-.blog-post ul li {
-  margin: 8px 0;
-}
-
-.blog-post ul li a {
-  color: #8f94fb;
+nav a {
+  color: #dcdcff;
+  margin: 0 8px;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  transition: color .18s ease, text-shadow .18s;
+  letter-spacing: 0.6px;
 }
+nav a:hover { color: white; text-shadow: 0 0 8px rgba(143,148,251,0.12); }
+nav a.active { color: var(--purple-1); font-weight: 700; text-decoration: underline; }
 
-.blog-post ul li a:hover {
-  color: #ffdd57;
-  text-decoration: underline;
-}
-
-/* Buttons (for Presentation & Quiz links) */
-.btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  color: white;
-  text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s ease;
-  margin: 8px 5px;
-}
-
-.btn:hover {
-  background: linear-gradient(135deg, #3a3ebd, #7075e0);
-  transform: scale(1.05);
-}
-
-/* Floating Emojis */
+/* ---------- Floating emojis (global) ---------- */
 .floating-emoji {
   position: fixed;
-  font-size: 2rem;
-  opacity: 0.8;
-  animation: float 10s infinite;
+  z-index: 30;
+  font-size: 1.25rem;
+  opacity: 0.9;
+  pointer-events: none;
+  transform-origin: center;
+  animation: floatY 7s ease-in-out infinite;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 
-.earth { top: 10%; left: 5%; }
-.planet { top: 20%; right: 10%; }
-.comet { bottom: 15%; left: 10%; }
-.ufo { bottom: 20%; right: 5%; }
-
-@keyframes float {
+/* allow overrides for emoji positions via inline style */
+@keyframes floatY {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-18px); }
   100% { transform: translateY(0); }
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.6);
-  border-top: 2px solid #8f94fb;
-  margin-top: auto;
+/* ---------- Container & content cards ---------- */
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
 }
+
+.fade-in { animation: fadeIn .9s ease both; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.blog-post {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(143,148,251,0.04);
+}
+
+/* images in profile pages */
+.blog-post img, .member-card img {
+  border-radius: 14px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(91,78,246,0.06);
+  border: 3px solid rgba(255,255,255,0.03);
+}
+
+/* ---------- Buttons (glowing purple) ---------- */
+.btn, .back-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--purple-2), var(--purple-1));
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 8px 30px rgba(143,148,251,0.16);
+  transition: transform .18s ease, box-shadow .18s ease;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.btn:hover, .back-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px rgba(91,78,246,0.2);
+}
+
+/* small secondary link */
+.link-subtle {
+  color: #cfcfff;
+  text-decoration: underline;
+}
+
+/* ---------- Members Carousel (members.html) ---------- */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+}
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 30px 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar { display: none; }
+
+.member-card {
+  scroll-snap-align: center;
+  flex: 0 0 80%;
+  max-width: 520px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius: 20px;
+  padding: 22px;
+  text-align: center;
+  border: 1px solid rgba(143,148,251,0.06);
+}
+
+/* carousel buttons */
+.carousel-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform .12s ease;
+}
+.carousel-btn:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(91,78,246,0.12); }
+
+/* ---------- Activities: horizontal planet rows (shared) ---------- */
+.activities-space {
+  text-align: center;
+  margin-top: 6px;
+  padding-bottom: 10px;
+}
+.activities-space h2 { color: var(--accent-yellow); margin-bottom: 6px; text-shadow: 0 0 10px rgba(0,0,0,0.6); }
+.activities-space .subtitle { color: #dcdcff; margin-bottom: 18px; opacity: 0.95; }
+
+/* generic horizontal row used by member-specific pages and group activities */
+.planet-row {
+  display: flex;
+  gap: 42px;
+  padding: 24px;
+  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  width: 100%;
+}
+.planet-row::-webkit-scrollbar { height: 10px; }
+.planet-row::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 8px; }
+
+/* planet visual */
+.planet {
+  scroll-snap-align: center;
+  flex: 0 0 260px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow: hidden;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  border: 2px solid rgba(143,148,251,0.04);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  transition: transform .28s ease, box-shadow .28s ease;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* slightly smaller on mobile */
+@media (max-width:900px) {
+  .planet { width: 220px; height: 220px; flex: 0 0 220px; }
+}
+@media (max-width:520px) {
+  .planet { width: 160px; height: 160px; flex: 0 0 160px; }
+}
+
+/* image inside planet */
+.planet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  border: 3px solid rgba(255,255,255,0.04);
+  animation: slowSpin 20s linear infinite;
+}
+
+/* caption pill */
+.planet .caption {
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.36);
+  color: var(--accent-yellow);
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* placeholder content for no-image planets */
+.planet .placeholder {
+  text-align: center;
+  padding: 12px;
+  color: #dfe9ff;
+  font-weight: 700;
+}
+
+/* hover & focus */
+.planet:hover { transform: translateY(-8px) scale(1.06); box-shadow: 0 28px 80px rgba(91,78,246,0.18); }
+.planet:active { transform: translateY(-4px) scale(1.03); }
+
+/* slow float and spin */
+@keyframes slowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* tiny floating offset animation */
+@keyframes floatNudge {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* small responsive card for member profiles */
+.member-profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+/* footer style */
+footer {
+  padding: 16px 8px;
+  text-align: center;
+  color: #cfcfff;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(143,148,251,0.04);
+  margin-top: 16px;
+}
+
+/* utility: center text */
+.center { text-align: center; }
+
+/* final nicety: subtle vignette */
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  box-shadow: inset 0 80px 120px rgba(0,0,0,0.45);
+  z-index: 8;
+  }
