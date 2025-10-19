@@ -6,139 +6,11 @@
   <title>Marjory's Activities — Visioneers Theory 🌌</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
-
-  <!-- Page-specific styles for horizontal planets (keeps consistent look) -->
-  <style>
-    :root {
-      --bg1: #070617;
-      --bg2: #0b1026;
-      --accent: #8f94fb;
-    }
-    body { background: radial-gradient(circle at 20% 10%, rgba(15,22,47,0.45), transparent 20%), radial-gradient(circle at 80% 90%, rgba(12,6,20,0.6), transparent 30%), linear-gradient(180deg, var(--bg1), var(--bg2)); min-height:100vh; }
-    header, footer { background: rgba(255,255,255,0.02); }
-    .member-activities {
-      padding: 28px 18px;
-      height: calc(100vh - 160px);
-      display:flex;
-      flex-direction:column;
-      gap: 12px;
-      align-items: flex-start;
-      color: #fff;
-    }
-
-    .back-btn {
-      display:inline-block;
-      background: linear-gradient(135deg, rgba(143,148,251,0.12), rgba(143,148,251,0.06));
-      border: 1px solid rgba(143,148,251,0.3);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 6px 18px rgba(143,148,251,0.04);
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .back-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(143,148,251,0.14); }
-
-    .timeline-wrap {
-      width: 100%;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-      padding: 18px 0;
-    }
-
-    .planet-row {
-      display: flex;
-      gap: 48px;
-      padding: 28px;
-      align-items: center;
-      transition: transform 320ms ease;
-      will-change: transform;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .planet-row::-webkit-scrollbar { height: 10px; }
-    .planet-row::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 8px; }
-
-    .planet {
-      scroll-snap-align: center;
-      flex: 0 0 260px;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position: relative;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.03), rgba(0,0,0,0.12));
-      box-shadow: 0 6px 30px rgba(0,0,0,0.6), 0 0 18px rgba(143,148,251,0.04);
-      transform-origin: center;
-      transition: transform .35s ease, box-shadow .25s ease;
-      animation: floatY calc(5s + var(--rand)*4s) ease-in-out infinite;
-    }
-
-    .planet img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid rgba(255,255,255,0.06);
-      display:block;
-      transform-origin:center;
-      animation: spinSlow calc(14s + var(--rand2)*10s) linear infinite;
-    }
-
-    .planet .caption {
-      position: absolute;
-      bottom: -38px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ffd86b;
-      font-weight: 700;
-      text-shadow: 0 0 6px #000;
-      background: rgba(0,0,0,0.28);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.04);
-      font-size: 0.98rem;
-    }
-
-    .planet:hover { transform: translateY(-8px) scale(1.06); box-shadow: 0 20px 60px rgba(143,148,251,0.14); }
-    .planet:active { transform: translateY(-2px) scale(1.02); }
-
-    /* gentle floating & spinning */
-    @keyframes floatY {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-14px) rotate(0.2deg); }
-      100% { transform: translateY(0) rotate(0deg); }
-    }
-    @keyframes spinSlow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* responsive */
-    @media (max-width:900px) {
-      .planet { width: 200px; height: 200px; flex: 0 0 200px; }
-    }
-    @media (max-width:520px) {
-      .planet { width: 160px; height: 160px; flex: 0 0 160px; }
-      .planet .caption { bottom: -30px; font-size: 0.92rem; }
-    }
-  </style>
 </head>
 <body>
-  <!-- Floating emojis (same vibe as main site) -->
-  <div class="floating-emoji" style="top:10%; left:8%;">🌠</div>
-  <div class="floating-emoji" style="top:20%; right:6%;">🪐</div>
+  <div class="floating-emoji" style="left:6%; top:9%;">🌠</div>
+  <div class="floating-emoji" style="right:12%; top:12%;">💫</div>
 
-  <!-- Header -->
   <header>
     <h1>Marjory B. Dugang — Activities</h1>
     <nav>
@@ -149,93 +21,28 @@
     </nav>
   </header>
 
-  <main class="member-activities">
-    <div>
-      <a class="back-btn" href="marjory-dugang.html">&larr; Back to Marjory’s Profile</a>
+  <main class="container">
+    <a class="back-btn" href="marjory-dugang.html">&larr; Back to Marjory’s Profile</a>
+
+    <h2 style="margin-top:14px;">Marjory's Activity Timeline</h2>
+    <p>Swipe horizontally to explore each activity.</p>
+
+    <div class="activities-gallery" style="margin-top:20px;">
+      <div class="activity-item"><img src="images-activities-activity1.jpg" alt=""><div class="caption">1</div></div>
+      <div class="activity-item"><img src="images-activities-activity2.jpg" alt=""><div class="caption">2</div></div>
+      <div class="activity-item"><img src="images-activities-activity3.0.jpg" alt=""><div class="caption">3.0</div></div>
+      <div class="activity-item"><img src="images-activities-activity3.1.jpg" alt=""><div class="caption">3.1</div></div>
+      <div class="activity-item"><img src="images-activities-activity4.0.jpg" alt=""><div class="caption">4.0</div></div>
+      <div class="activity-item"><img src="images-activities-activity4.1.jpg" alt=""><div class="caption">4.1</div></div>
+      <div class="activity-item"><img src="images-activities-activity4.2.jpg" alt=""><div class="caption">4.2</div></div>
+      <div class="activity-item"><img src="images-activities-activity5.jpg" alt=""><div class="caption">5</div></div>
+      <div class="activity-item"><img src="images-activities-activity6.0.jpg" alt=""><div class="caption">6.0</div></div>
+      <div class="activity-item"><img src="images-activities-activity6.1.jpg" alt=""><div class="caption">6.1</div></div>
+      <div class="activity-item"><img src="images-activities-activity6.2.jpg" alt=""><div class="caption">6.2</div></div>
+      <div class="activity-item"><img src="images-activities-activity6.3.jpg" alt=""><div class="caption">6.3</div></div>
     </div>
-
-    <section class="timeline-wrap">
-      <div class="planet-row" id="marjoryPlanetRow">
-        <!-- 12 planets from Marjory (replace filenames with actual files when you add them) -->
-        <div class="planet" style="--rand:0.12; --rand2:0.6">
-          <img src="images-activities-activity1.jpg" alt="Activity 1">
-          <div class="caption">Activity 1</div>
-        </div>
-
-        <div class="planet" style="--rand:0.31; --rand2:0.2">
-          <img src="images-activities-activity2.jpg" alt="Activity 2">
-          <div class="caption">Activity 2</div>
-        </div>
-
-        <div class="planet" style="--rand:0.58; --rand2:0.9">
-          <img src="images-activities-activity3.0.jpg" alt="Activity 3.0">
-          <div class="caption">Activity 3.0</div>
-        </div>
-
-        <div class="planet" style="--rand:0.22; --rand2:0.75">
-          <img src="images-activities-activity3.1.jpg" alt="Activity 3.1">
-          <div class="caption">Activity 3.1</div>
-        </div>
-
-        <div class="planet" style="--rand:0.79; --rand2:0.35">
-          <img src="images-activities-activity4.0.jpg" alt="Activity 4.0">
-          <div class="caption">Activity 4.0</div>
-        </div>
-
-        <div class="planet" style="--rand:0.41; --rand2:0.43">
-          <img src="images-activities-activity4.1.jpg" alt="Activity 4.1">
-          <div class="caption">Activity 4.1</div>
-        </div>
-
-        <div class="planet" style="--rand:0.05; --rand2:0.2">
-          <img src="images-activities-activity4.2.jpg" alt="Activity 4.2">
-          <div class="caption">Activity 4.2</div>
-        </div>
-
-        <div class="planet" style="--rand:0.67; --rand2:0.55">
-          <img src="images-activities-activity5.jpg" alt="Activity 5">
-          <div class="caption">Activity 5</div>
-        </div>
-
-        <div class="planet" style="--rand:0.9; --rand2:0.12">
-          <img src="images-activities-activity6.0.jpg" alt="Activity 6.0">
-          <div class="caption">Activity 6.0</div>
-        </div>
-
-        <div class="planet" style="--rand:0.33; --rand2:0.48">
-          <img src="images-activities-activity6.1.jpg" alt="Activity 6.1">
-          <div class="caption">Activity 6.1</div>
-        </div>
-
-        <div class="planet" style="--rand:0.18; --rand2:0.83">
-          <img src="images-activities-activity6.2.jpg" alt="Activity 6.2">
-          <div class="caption">Activity 6.2</div>
-        </div>
-
-        <div class="planet" style="--rand:0.44; --rand2:0.29">
-          <img src="images-activities-activity6.3.jpg" alt="Activity 6.3">
-          <div class="caption">Activity 6.3</div>
-        </div>
-
-      </div>
-    </section>
   </main>
 
-  <footer>
-    <p>© 2025 Visioneers Theory 🌌</p>
-  </footer>
-
-  <script>
-    // make horizontal scrolling respond to vertical wheel (nice UX)
-    (function() {
-      const row = document.getElementById('marjoryPlanetRow');
-      row.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-          e.preventDefault();
-          row.scrollBy({ left: e.deltaY + e.deltaX, behavior: 'smooth' });
-        }
-      }, { passive: false });
-    })();
-  </script>
+  <footer><p>© 2025 Visioneers Theory 🌌</p></footer>
 </body>
 </html>
