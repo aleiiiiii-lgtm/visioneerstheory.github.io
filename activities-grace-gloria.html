@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grace's Activities — Visioneers Theory 🌌</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+
+  <style>
+    :root { --bg1:#070617; --bg2:#0b1026; }
+    body { background: radial-gradient(circle at 20% 10%, rgba(15,22,47,0.45), transparent 20%), linear-gradient(180deg, var(--bg1), var(--bg2)); }
+    .member-activities { padding: 28px 18px; height: calc(100vh - 160px); display:flex; flex-direction:column; gap:12px; align-items:flex-start; color:#fff; }
+    .back-btn { display:inline-block; background: linear-gradient(135deg, rgba(143,148,251,0.12), rgba(143,148,251,0.06)); border:1px solid rgba(143,148,251,0.3); color:#fff; padding:8px 12px; border-radius:12px; text-decoration:none; font-weight:600; transition: transform .18s; }
+    .timeline-wrap { width:100%; flex:1; display:flex; align-items:center; justify-content:center; overflow:hidden; padding:18px 0; }
+    .planet-row { display:flex; gap:48px; padding:28px; align-items:center; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling: touch; }
+    .planet { scroll-snap-align:center; flex:0 0 220px; width:220px; height:220px; border-radius:50%; display:flex; align-items:center; justify-content:center; position:relative; animation: floatY calc(5s + var(--rand)*4s) ease-in-out infinite; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.02), rgba(0,0,0,0.12)); box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+    .planet .placeholder { color: #dfe9ff; font-weight:700; text-align:center; padding:10px; }
+    .planet .caption { position:absolute; bottom:-34px; left:50%; transform:translateX(-50%); color:#ffd86b; background: rgba(0,0,0,0.28); padding:6px 10px; border-radius:999px; font-weight:700; }
+    @keyframes floatY { 0%{ transform: translateY(0) } 50%{ transform: translateY(-12px) } 100%{ transform: translateY(0) } }
+  </style>
+</head>
+<body>
+  <div class="floating-emoji" style="top:9%; left:12%;">🌠</div>
+  <div class="floating-emoji" style="top:24%; right:10%;">✨</div>
+
+  <header>
+    <h1>Grace Gloria — Activities</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="members.html">Members</a> |
+      <a href="grace-gloria.html" class="active">Profile</a>
+    </nav>
+  </header>
+
+  <main class="member-activities">
+    <div>
+      <a class="back-btn" href="grace-gloria.html">&larr; Back to Grace’s Profile</a>
+    </div>
+
+    <section class="timeline-wrap">
+      <div class="planet-row" id="gracePlanetRow">
+        <div class="planet" style="--rand:0.11"><div class="placeholder">🌙 No activity submitted yet</div><div class="caption">—</div></div>
+        <div class="planet" style="--rand:0.44"><div class="placeholder">🌙 No activity submitted yet</div><div class="caption">—</div></div>
+        <div class="planet" style="--rand:0.72"><div class="placeholder">🌙 No activity submitted yet</div><div class="caption">—</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Visioneers Theory 🌌</p>
+  </footer>
+
+  <script>
+    (function(){ const row = document.getElementById('gracePlanetRow'); row.addEventListener('wheel', (e)=>{ if (Math.abs(e.deltaY) > Math.abs(e.deltaX)){ e.preventDefault(); row.scrollBy({ left: e.deltaY + e.deltaX, behavior: 'smooth' }); } }, {passive:false}); })();
+  </script>
+</body>
+</html>
