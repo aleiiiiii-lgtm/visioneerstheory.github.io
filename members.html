@@ -1,33 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Members - Visioneers Theory 🌌</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Members – Visioneers Theory 🌌</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Floating emojis -->
+  <div class="floating-emoji">🌙</div>
+  <div class="floating-emoji">🌠</div>
+  <div class="floating-emoji">💫</div>
+  <div class="floating-emoji">🚀</div>
+  <div class="floating-emoji">⭐</div>
+
   <!-- Header -->
   <header>
     <h1>Visioneers Theory 🚀</h1>
     <nav>
       <a href="index.html">Home</a> |
       <a href="about.html">About</a> |
-      <a href="members.html" class="active">Members</a>
+      <a href="members.html" class="active">Members</a> |
+      <a href="activities.html">Activities</a> |
+      <a href="presentation.html">Presentation</a>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="container">
-    <div class="blog-post">
-      <h2>Meet the Team</h2>
-      <ul>
-        <li><a href="marjory-dugang.html">Marjory B. Dugang</a></li>
-        <li><a href="dale-eugenio.html">Dale Eugenio</a></li>
-        <li><a href="acel-gabriel-ferrer.html">Acel Gabriel Ferrer</a></li>
-        <li><a href="grace-gloria.html">Grace Gloria</a></li>
-        <li><a href="fiona-nicole-nota.html">Fiona Nicole Nota</a></li>
-      </ul>
+  <main class="container fade-in">
+    <h2 class="center">Meet the Visioneers 🌟</h2>
+
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+      <button class="carousel-btn left" id="prevBtn">⬅️</button>
+      <div class="carousel" id="memberCarousel">
+
+        <!-- Member Card 1 -->
+        <div class="member-card">
+          <img src="marjory.jpg" alt="Marjory Dugang" />
+          <h3>Marjory Dugang 💫</h3>
+          <p>The creative spark of the group — passionate, determined, and full of vision.</p>
+          <a href="marjory-dugang.html" class="btn">View Profile</a>
+        </div>
+
+        <!-- Member Card 2 -->
+        <div class="member-card">
+          <img src="dale.jpg" alt="Dale Eugenio" />
+          <h3>Dale Eugenio 🚀</h3>
+          <p>The motivator and strategist — always ready to lead and inspire others.</p>
+          <a href="dale-eugenio.html" class="btn">View Profile</a>
+        </div>
+
+        <!-- Member Card 3 -->
+        <div class="member-card">
+          <img src="acel.jpg" alt="Acel Gabriel Ferrer" />
+          <h3>Acel Gabriel Ferrer 🌌</h3>
+          <p>The dreamer and designer — turning ideas into colorful and creative outputs.</p>
+          <a href="acel-gabriel-ferrer.html" class="btn">View Profile</a>
+        </div>
+
+        <!-- Member Card 4 -->
+        <div class="member-card">
+          <img src="grace.jpg" alt="Grace Gloria" />
+          <h3>Grace Gloria 🌠</h3>
+          <p>The calm soul — brings harmony, strength, and heart to the team’s work.</p>
+          <a href="grace-gloria.html" class="btn">View Profile</a>
+        </div>
+
+        <!-- Member Card 5 -->
+        <div class="member-card">
+          <img src="fiona.jpg" alt="Fiona Nicole Nota" />
+          <h3>Fiona Nicole Nota 🌙</h3>
+          <p>The bright star — always shining with positivity, talent, and hard work.</p>
+          <a href="fiona-nicole-nota.html" class="btn">View Profile</a>
+        </div>
+
+      </div>
+      <button class="carousel-btn right" id="nextBtn">➡️</button>
     </div>
   </main>
 
@@ -35,5 +85,20 @@
   <footer>
     <p>© 2025 Visioneers Theory 🌌</p>
   </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    const carousel = document.getElementById("memberCarousel");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: 300, behavior: "smooth" });
+    });
+
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollBy({ left: -300, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>
